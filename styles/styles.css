@@ -1,42 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
+*,
+html,
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #2980b9, #8e44ad);
-    height: 100%;
+    font-family: "Roboto", sans-serif;
+    
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+.fContainer {
+    display: block;
+    min-height: 100vh;
+    background-color: #313131;
+    background: url("/assets/bg.jpg") no-repeat center center fixed;
+}
+/* Nabar  */
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 15px;
+    width: 98%;
+    height: 60px;
+    background-color: #313131;
+    opacity: 0.9;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.5);
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.brand {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    padding: 15px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.firstname {
+    color: aliceblue;
+    font-weight: 700;
+
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+.lastname {
+    color: rgb(0, 113, 206);
 }
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation>li {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.navigation>li>a {
+    color: aliceblue;
+    font-size: 20px;
+    text-decoration: none; 
+}
+
+.navigation>li>a:hover{
+    color:rgb(0, 113, 206);
+    transition: all .3s ease-in-out;
+}
+
+.active {
+    background-color: rgb(0, 113, 206);
+    color: aliceblue;
+    padding: 15px;
+}
+
+.active:hover {
+    color: aliceblue !important;
+}
+
+/* Login */
 
 .center {
     position: relative;
@@ -137,13 +177,20 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
+
+/* footer */
 footer {
     width: 100%;
     padding: 10px;
     line-height: 1.5;
     background: #333;
-    color: #fff;
+    color: #cbcbcb;
     text-align: center;
     position: fixed;
     bottom: 0;
+}
+
+.logo {
+    width: 25px;
+    height: 25px;
 }
