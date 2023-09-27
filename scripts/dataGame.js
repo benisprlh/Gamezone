@@ -18,7 +18,7 @@ window.dataGame = [
     {
         nama: "PUBG",
         genre: "Battle-Royal",
-        image: "https://cdns.klimg.com/bola.net/library/upload/21/2018/10/pubg-l_86a2a84.jpg",
+        image: "https://assets.skor.id/crop/0x0:0x0/x/photo/2020/03/08/2855348267.jpg",
         umur: 19,
         harga: 340_000,
         stok: 46
@@ -42,7 +42,7 @@ window.dataGame = [
     {
         nama: "SMACKDOWN WWE",
         genre: "Sports",
-        image: "https://static.wikia.nocookie.net/logopedia/images/c/cd/48122316.jpg/revision/latest?cb=20150926123311",
+        image: "https://cdn.wrestletalk.com/wp-content/uploads/2022/08/SmackDown-Logo.jpg",
         umur: 19,
         harga: 580_000,
         stok: 10
@@ -98,7 +98,7 @@ window.dataGame = [
     {
         nama: "Resident Evil Village",
         genre: "Action",
-        image: "https://static.wikia.nocookie.net/capcomdatabase/images/7/78/REVillage_logo.png/revision/latest?cb=20221101174852",
+        image: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/09/Resident-Evil-Village-Key-Art.jpg",
         umur: 18,
         harga: 260_000,
         stok: 22
@@ -114,7 +114,7 @@ window.dataGame = [
     {
         nama: "Smash Legends",
         genre: "Battle-Royal",
-        image: "https://static.wikia.nocookie.net/gamia_gamepedia_en/images/3/3f/SMASH_LEGENDS.jpg/revision/latest?cb=20210502195532",
+        image: "https://d.player.one/en/full/210272/enjoy-new-update.png?w=736&f=d309910ef78f6e7722d4d92a7cea955b",
         umur: 15,
         harga: 120_000,
         stok: 24
@@ -146,7 +146,7 @@ window.dataGame = [
     {
         nama: "Metal Slug",
         genre: "Action",
-        image: "https://cdn.imgbin.com/19/3/8/imgbin-metal-slug-6-contra-visual-pinball-logo-metal-slug-GBPrz6zHKQuiRgxgqm4xKUS1X.jpg",
+        image: "https://peanutbutterjammatime.files.wordpress.com/2014/01/msxppb.jpg",
         umur: 14,
         harga: 160_000,
         stok : 49
@@ -227,7 +227,7 @@ window.dataGame = [
     {
         nama: "Spiderman",
         genre: "Action",
-        image : "https://static.wikia.nocookie.net/spidermanps4/images/9/93/Miles_Morales_front_cover_%28US%29.png/revision/latest?cb=20201002201551",
+        image : "https://png.pngitem.com/pimgs/s/520-5204886_spiderman-logo-2018-png-transparent-png.png",
         umur: 14,
         harga: 100_000,
         stok : 19
