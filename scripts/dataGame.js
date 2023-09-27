@@ -148,7 +148,7 @@ let dataGame = [
         genre: "Action",
         image: "https://cdn.imgbin.com/19/3/8/imgbin-metal-slug-6-contra-visual-pinball-logo-metal-slug-GBPrz6zHKQuiRgxgqm4xKUS1X.jpg",
         umur: 14,
-        harga: 100_000,
+        harga: 160_000,
         stok : 49
     },
         
@@ -157,7 +157,7 @@ let dataGame = [
         genre: "Sports",
         image: "https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2023/06/09/downhill-domination-4089449016.jpg",
         umur: 14,
-        harga: 100_000,
+        harga: 210_000,
         stok : 49
     },
     {
@@ -173,7 +173,7 @@ let dataGame = [
         genre: "Action",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9fCyRGWO4gmqQUjLKur6sCHQhQQwfeL3Kmg&usqp=CAU",
         umur: 14,
-        harga: 300_000,
+        harga: 350_000,
         stok : 49
     },
     {
@@ -181,7 +181,7 @@ let dataGame = [
         genre: "Action",
         image: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000029643/6879fa3616ef618128208342b51922a759ebb96e82bfee7f452534f1d42a660e",
         umur: 14,
-        harga: 100_000,
+        harga: 300_000,
         stok : 49
     },
     {
@@ -189,7 +189,7 @@ let dataGame = [
         genre: "Sports",
         image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL6gaX4nvY8TGOjeDrxaiJUaSBIvCDIKXHmw&usqp=CAU",
         umur: 14,
-        harga: 147_000,
+        harga: 370_000,
         stok : 25
     },
     {
@@ -205,7 +205,7 @@ let dataGame = [
         genre: "Sports",
         image : "https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/yZ7dpmjtHr1olhutHT57IFRh.png",
         umur: 14,
-        harga: 100_000,
+        harga: 230_000,
         stok : 19
     },
     {
@@ -213,51 +213,32 @@ let dataGame = [
         genre: "Sports",
         image : "https://img.xboxachievements.com/images/2018/06/29/icon/885f4307e0a0beb691882dfe99a6b6e7-l.png",
         umur: 14,
-        harga: 100_000,
+        harga: 430_000,
         stok : 19
     },
     {
-        nama: "The Crew Motorfest",
-        genre: "Sports",
-        image : "https://upload.wikimedia.org/wikipedia/en/e/ea/The_Crew_Motorfest_cover_art.jpg",
+        nama: "Starfield",
+        genre: "Action",
+        image : "https://cdn.akamai.steamstatic.com/steam/apps/1716740/capsule_616x353.jpg?t=1694716152",
+        umur: 18,
+        harga: 450_000,
+        stok : 19
+    },
+    {
+        nama: "Spiderman",
+        genre: "Action",
+        image : "https://static.wikia.nocookie.net/spidermanps4/images/9/93/Miles_Morales_front_cover_%28US%29.png/revision/latest?cb=20201002201551",
         umur: 14,
         harga: 100_000,
         stok : 19
     },
     {
-        nama: "The Crew Motorfest",
-        genre: "Sports",
-        image : "https://upload.wikimedia.org/wikipedia/en/e/ea/The_Crew_Motorfest_cover_art.jpg",
-        umur: 14,
-        harga: 100_000,
-        stok : 19
-    },
-    {
-        nama: "The Crew Motorfest",
-        genre: "Sports",
-        image : "https://upload.wikimedia.org/wikipedia/en/e/ea/The_Crew_Motorfest_cover_art.jpg",
+        nama: "Fall Guys",
+        genre: "Battle-Royal",
+        image : "https://cdn2.unrealengine.com/fgss04-keyart-legal1-3840x2160-3840x2160-77a7e10e3a6d.png",
         umur: 14,
         harga: 100_000,
         stok : 19
     },  
 ]
-let countSports = 0;
-let countAction = 0;
-let countBR = 0;
-let countDewasa = 0;
-let countRemaja = 0;
-for (let i = 0; i < dataGame.length; i++){
-    if (dataGame[i].genre === 'Sports'){
-        countSports++;
-    } else if (dataGame[i].genre === 'Action'){
-        countAction++;
-    } else {
-        countBR++;
-    }
-    if (dataGame[i].umur < 18){
-        countRemaja++;
-    } else{
-        countDewasa++;
-    }
-}
-console.log(countSports, countAction, countBR, countRemaja, countDewasa);
+
