@@ -14,7 +14,6 @@ function generateGameItems() {
                 <img src="${game.image}" alt="${game.nama}">
                 <h2>${game.nama}</h2>
                 <p>Genre: ${game.genre}</p>
-                <p>Age: ${game.umur}</p>
                 <p>Price: RP.${game.harga}</p>
                 <p>Stock: ${game.stok} available</p>
                 <button>Add to Cart</button>
@@ -49,6 +48,7 @@ renderGameItems();
     cancelBtn.addEventListener("click", function()
     {
         clearSearchInput();
+        renderGameItems();
     });
 });
     
