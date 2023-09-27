@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h2>GAMEZONE</h2>
         <table>
             <thead>
@@ -19,12 +20,22 @@
             </tr>
             </thead>
             <tbody>
-                
+                <tr>
+                    <th><img src="https://www.acerid.com/wp-content/uploads/2020/01/Call-of-Duty-Modern-Warfare-Thumbnail-600x397.jpg"></th>
+                    <th>Ragnarok</th>
+                    <th>1</th>
+                    <th>50.000</th>
+                    <th>
+                        <button class="button-29" id="penambahan">+</button>
+                        <button class="button-29" id="pengurangan">-</button>
+                        <button class="button-29" id="delete">delete</button>
+                    </th>
+                </tr>
             </tbody>
         </table>
     </div>
     <div>
-        <form action="">
+        <form action="" class="container">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"><br><br>
             <label for="email">Email:</label>
@@ -33,16 +44,16 @@
             <input type="text" id="numberPhone" name="numberPhone"><br><br>
             <label for="adress">Adress:</label>
             <input type="text" id="adress" name="adress"><br><br>
-            <input type="submit" value="Submit">
+            <input class="button-29" type="submit" value="Submit">
           </form>
     </div>
-    <div>
+    <div class="container">
         <h3>Checkout</h3>
         <h4>Total Item Products</h4>
         <div>
-
+            
         </div>
-        <button type="button">Pay now</button>
+        <button class="button-29" type="button">Pay now</button>
     </div>
 </body>
 </html>
