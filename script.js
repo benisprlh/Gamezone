@@ -1,37 +1,73 @@
 document.addEventListener("DOMContentLoaded", function()
 {
     // import { dataGame } from './scripts/dataGame.js';
+   
 
-
-function generateGameItems() {
+function generateGameItems(ageFixed) {
     
     let dataGame = window.dataGame;
+                            
+    let idAge = localStorage.getItem("keyAge");
+    let action = localStorage.getItem("Action");
+    let battleRoyal = localStorage.getItem("Battle-Royal");
+    let sports = localStorage.getItem("Sports");
+    let genreGroup = [action, battleRoyal, sports]
+    let priceUp300 = localStorage.getItem("up300")
+    let priceUnder300 = localStorage.getItem("under300")
+    let priceGroup = [priceUp300, priceUnder300]
     let gameItemsHTML = "";
-    
     dataGame.forEach((game, index) => {
-        gameItemsHTML += `
-            <article class="game-item">
-                <img src="${game.image}" alt="${game.nama}">
-                <h2>${game.nama}</h2>
-                <p>Genre: ${game.genre}</p>
-                <p>Price: RP.${game.harga}</p>
-                <p>Stock: ${game.stok} available</p>
-                <button>Add to Cart</button>
-            </article>
-        `;
-    });
+        if (idAge === "Di Bawah 18 Tahun"){
+            if (game.umur < 18){
+                for (let i = 0; i < genreGroup.length; i++){
+                    if (genreGroup[i] === game.genre){
+                        gameItemsHTML += `
+                        <article class="game-item">
+                            <img src="${game.image}" alt="${game.nama}"gi>
+                            <h2>${game.nama}</h2>
+                            <p>Genre: ${game.genre}</p>
+                            <p>Price: RP.${game.harga}</p>
+                            <p>Stock: ${game.stok} available</p>
+                            <button>Add to Cart</button>
+                        </article>
+                    `;
+                    }
+                }
+                
+            }
+        } else {
+            for (let i = 0; i < genreGroup.length; i++){
+                if (genreGroup[i] === game.genre){
+                    gameItemsHTML += `
+                    <article class="game-item">
+                        <img src="${game.image}" alt="${game.nama}"gi>
+                        <h2>${game.nama}</h2>
+                        <p>Genre: ${game.genre}</p>
+                        <p>Price: RP.${game.harga}</p>
+                        <p>Stock: ${game.stok} available</p>
+                        <button>Add to Cart</button>
+                    </article>
+                `;
+                }
+            }
+        }
+         
+    
+});    
+    
     return gameItemsHTML;
 }
     
-function renderGameItems() {
-     const gameList = document.querySelector(".game-list");
-     const gameItemsHTML = generateGameItems();
-    
-     gameList.innerHTML = gameItemsHTML;
+function renderGameItems(ageFixed) {
+    const gameList = document.querySelector(".game-list");
+    const gameItemsHTML = generateGameItems(ageFixed);
+   
+    gameList.innerHTML = gameItemsHTML;
 }
 renderGameItems();
 
 
+    
     const searchInput = document.getElementById("search-input");
     const searchBtn = document.getElementById("search-btn");
     const cancelBtn = document.getElementById("cancel-btn");
