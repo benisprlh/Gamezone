@@ -136,16 +136,17 @@ let dataGame = [
         stok: 16
     },
     {
-        nama: "PUBG",
-        genre: "Battle-Royal",
-        image: "https://cdns.klimg.com/bola.net/library/upload/21/2018/10/pubg-l_86a2a84.jpg",
-        umur: 19,
+        nama: "Madden Nfl",
+        genre: "Sports",
+        image: "https://cdkeyprices.com/images/games/5635298/madden-nfl-22-desktop-logo-all.jpg",
+        umur: 15,
         harga: 340_000,
         stok: 46
     },
     {
         nama: "Metal Slug",
         genre: "Action",
+        image: "https://cdn.imgbin.com/19/3/8/imgbin-metal-slug-6-contra-visual-pinball-logo-metal-slug-GBPrz6zHKQuiRgxgqm4xKUS1X.jpg",
         umur: 14,
         harga: 100_000,
         stok : 49
@@ -154,6 +155,7 @@ let dataGame = [
     {
         nama: "Downhill",
         genre: "Sports",
+        image: "https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2023/06/09/downhill-domination-4089449016.jpg",
         umur: 14,
         harga: 100_000,
         stok : 49
@@ -161,6 +163,7 @@ let dataGame = [
     {
         nama: "God of War",
         genre: "Action",
+        image: "https://i.pinimg.com/736x/30/a8/51/30a851312cd06561b323b86e335c6add--game-movie-game-logo.jpg",
         umur: 14,
         harga: 400_000,
         stok : 49
@@ -168,6 +171,7 @@ let dataGame = [
     {
         nama: "Assassin's Creed",
         genre: "Action",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9fCyRGWO4gmqQUjLKur6sCHQhQQwfeL3Kmg&usqp=CAU",
         umur: 14,
         harga: 300_000,
         stok : 49
@@ -175,9 +179,42 @@ let dataGame = [
     {
         nama: "Dragon Ball's",
         genre: "Action",
+        image: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000029643/6879fa3616ef618128208342b51922a759ebb96e82bfee7f452534f1d42a660e",
         umur: 14,
         harga: 100_000,
         stok : 49
+    },
+    {
+        nama: "Rocket League",
+        genre: "Sports",
+        image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL6gaX4nvY8TGOjeDrxaiJUaSBIvCDIKXHmw&usqp=CAU",
+        umur: 14,
+        harga: 147_000,
+        stok : 25
+    },
+    {
+        nama: "Skate 3",
+        genre: "Sports",
+        image : "https://assets-prd.ignimgs.com/2022/01/07/skate-3-button-1641599749809.jpg",
+        umur: 14,
+        harga: 354_000,
+        stok : 32
+    },
+    {
+        nama: "Gran Turismo 7",
+        genre: "Sports",
+        image : "https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/yZ7dpmjtHr1olhutHT57IFRh.png",
+        umur: 14,
+        harga: 100_000,
+        stok : 19
+    },
+    {
+        nama: "The Crew 2",
+        genre: "Sports",
+        image : "https://img.xboxachievements.com/images/2018/06/29/icon/885f4307e0a0beb691882dfe99a6b6e7-l.png",
+        umur: 14,
+        harga: 100_000,
+        stok : 19
     },
     {
         nama: "The Crew Motorfest",
@@ -188,47 +225,21 @@ let dataGame = [
         stok : 19
     },
     {
-        nama: "Dragon Ball's",
-        genre: "Action",
+        nama: "The Crew Motorfest",
+        genre: "Sports",
+        image : "https://upload.wikimedia.org/wikipedia/en/e/ea/The_Crew_Motorfest_cover_art.jpg",
         umur: 14,
         harga: 100_000,
-        stok : 49
+        stok : 19
     },
     {
-        nama: "Dragon Ball's",
-        genre: "Action",
+        nama: "The Crew Motorfest",
+        genre: "Sports",
+        image : "https://upload.wikimedia.org/wikipedia/en/e/ea/The_Crew_Motorfest_cover_art.jpg",
         umur: 14,
         harga: 100_000,
-        stok : 49
-    },
-    {
-        nama: "Dragon Ball's",
-        genre: "Action",
-        umur: 14,
-        harga: 100_000,
-        stok : 49
-    },
-    {
-        nama: "Dragon Ball's",
-        genre: "Action",
-        umur: 14,
-        harga: 100_000,
-        stok : 49
-    },
-    {
-        nama: "Dragon Ball's",
-        genre: "Action",
-        umur: 14,
-        harga: 100_000,
-        stok : 49
-    },
-    {
-        nama: "Dragon Ball's",
-        genre: "Action",
-        umur: 14,
-        harga: 100_000,
-        stok : 49
-    }  
+        stok : 19
+    },  
 ]
 let countSports = 0;
 let countAction = 0;
