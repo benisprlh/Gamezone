@@ -1,4 +1,4 @@
-let dataGame = [
+window.dataGame = [
     {
         nama: "Nba",
         genre: "Sports",
@@ -241,4 +241,28 @@ let dataGame = [
         stok : 19
     },  
 ]
+
+
+// export { dataGame };
+
+// let countSports = 0;
+// let countAction = 0;
+// let countBR = 0;
+// let countDewasa = 0;
+// let countRemaja = 0;
+// for (let i = 0; i < dataGame.length; i++){
+//     if (dataGame[i].genre === 'Sports'){
+//         countSports++;
+//     } else if (dataGame[i].genre === 'Action'){
+//         countAction++;
+//     } else {
+//         countBR++;
+//     }
+//     if (dataGame[i].umur < 18){
+//         countRemaja++;
+//     } else{
+//         countDewasa++;
+//     }
+// }
+// console.log(countSports, countAction, countBR, countRemaja, countDewasa);
 
