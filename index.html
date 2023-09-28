@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>  
-    
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>GameZone</title>
+  </head>
+<body>
+    <div class="fContainer">
+        <!-- navbar -->
+        <nav class="wrapper">
+            <div class="brand">
+                <div class="firstname">Game</div>
+                <div class="lastname">Zone</div>
+            </div>
+            <ul class="navigation">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="listGame.html">Shop</a></li>
+                <li><a href="aboutUs.html">About</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+        <!-- login -->
+        <div class="center">
+            <h1>Login</h1>
+            <form method="post">
+                <div class="txt_field">
+                    <input type="text" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <div class="pass">Forgot Password?</div>
+                <input type="submit" value="Login">
+                <div class="signup_link">
+                    Not a member? <a href="#">Signup</a>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <p>&copy; 2023 GameZone</p>
+                <a href="#"><img src="./images/ig.png" alt="instagram logo" class="logo" ></a>
+                <a href="#"><img src="./images/twitter.png" alt="twitter logo" class="logo" ></a>
+                <a href="#"><img src="./images/facebook.png" alt="facebook logo" class="logo" ></a>
+                <a href="#"><img src="./images/ytb.png" alt="youtube logo" class="logo" ></a>
+        </footer>
+    </div>
 </body>
+
 </html>

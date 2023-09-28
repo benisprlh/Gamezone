@@ -16,9 +16,9 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class=" nav-item nav-link text-white active" href="index.html">Home</a>
-          <a class="nav-item nav-link text-white" href="quiz.html">Quis</a>
           <a class="nav-item nav-link text-white" href="listGame.html">Shop</a>
-          <a class="nav-item nav-link text-white" href="cart.html">About</a>
+          <a class="nav-item nav-link text-white" href="aboutUs.html">About Us</a>
+          <a class="nav-item nav-link text-white" href="cart.html">Cart</a>
         </div>
     </div>
 </div>
@@ -36,13 +36,13 @@
         <div class="card-body">
           <p>Berapakah Usia Kamu Saat Ini?</p>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="usiaunder18">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Di Bawah 18 Tahun" id="usiaunder18">
             <label class="form-check-label" for="flexRadioDefault1">
             Di Bawah 18 Tahun
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="usiaup18" checked>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="18 Ke Atas" id="usiaup18">
             <label class="form-check-label" for="flexRadioDefault2">
               18 Ke Atas
             </label>
@@ -53,43 +53,28 @@
         <div class="card-body">
          <p>Jenis Game Yang Kamu Sukai ?</p>
          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="action">
-            <label class="form-check-label" for="flexRadioDefault1">
+            <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Action" id="Action">
+            <label class="form-check-label" for="flexCheckboxDefault1">
             Action
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="Batle" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
+            <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Battle-Royal" id="Battle-Royal">
+            <label class="form-check-label" for="flexCheckboxDefault2">
               Battle-Royal
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="Sports" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
+            <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Sports" id="Sports">
+            <label class="form-check-label" for="flexCheckboxDefault2">
               Sports
             </label>
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <p> Harga Pilihan Game Anda ?</p>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="under300">
-            <label class="form-check-label" for="flexRadioDefault1">
-            Di Bawah Rp.300.000
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="up300" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Di Atas Rp.300.000
-            </label>
-          </div>
-        </div>
+      
     </div>
-    <a class="btn btn-primary" href="listGame.html" type="button">NEXT PAGE</a>
+    <a class="btn btn-primary" href="listGame.html" type="button" id="nextPage">NEXT PAGE</a>
 </div>
 </div>
 
@@ -142,7 +127,7 @@
     }
 
     </style>
-
+    <script src="./fill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
