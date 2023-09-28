@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function()
 {
     // import { dataGame } from './scripts/dataGame.js';
+    // localStorage.clear();
    
 
 function generateGameItems() {
@@ -18,7 +19,7 @@ function generateGameItems() {
     localStorage.removeItem("Sports")
     let gameItemsHTML = "";
     dataGame.forEach((game, index) => {
-        localStorage.setItem(`stock-${game.nama}`, game.stok);
+        const stock = JSON.parse(localStorage.getItem(`stock-${game.nama}`)) || game.stok;
         if (!action && !sports && !battleRoyal){
             gameItemsHTML += `
             <article class="game-item">
@@ -26,7 +27,7 @@ function generateGameItems() {
                 <h2>${game.nama}</h2>
                 <p>Genre: ${game.genre}</p>
                 <p>Price: RP.${game.harga}</p>
-                <p class="stock" id="stock-${game.nama}">Stock: ${game.stok} available</p>
+                <p class="stock" id="stock-${game.nama}">Stock: ${stock > 0 ? stock : 0} available</p>
                 <button class="cart-button" data-stock="${game.stok}">Add to Cart</button>
             </article>
         `;
@@ -41,7 +42,7 @@ function generateGameItems() {
                             <h2>${game.nama}</h2>
                             <p>Genre: ${game.genre}</p>
                             <p>Price: RP.${game.harga}</p>
-                            <p class="stock" id="stock-${game.nama}">Stock: ${game.stok} available</p>
+                            <p class="stock" id="stock-${game.nama}">Stock: ${stock > 0 ? stock : 0} available</p>
                             <button class="cart-button" data-stock="${game.stok}">Add to Cart</button>
                         </article>
                     `;
@@ -58,7 +59,7 @@ function generateGameItems() {
                         <h2>${game.nama}</h2>
                         <p>Genre: ${game.genre}</p>
                         <p>Price: RP.${game.harga}</p>
-                        <p class="stock" id="stock-${game.nama}">Stock: ${game.stok} available</p>
+                        <p class="stock" id="stock-${game.nama}">Stock: ${stock > 0 ? stock : 0} available</p>
                         <button class="cart-button" data-stock="10">Add to Cart</button>
                     </article>
                 `;
@@ -109,72 +110,62 @@ const gameItems = document.querySelectorAll('.game-item');
       localStorage.setItem('cart', JSON.stringify([]));
     }
 
-    // Inisialisasi stok saat halaman dimuat
-    // Mengambil stok dari localStorage (jika sudah ada)
-    const stock = JSON.parse(localStorage.getItem('stock')) || {};
-  
-    // Memperbarui tampilan stok di halaman list game
-
-    gameItems.forEach(gameItem => {
-      const gameDataIndex = Array.from(gameItems).indexOf(gameItem);
-      const gameData = window.dataGame[gameDataIndex];
-      const stockElement = gameItem.querySelector('[data-stock]');
-  
-      if (stock[gameData.nama] !== undefined) {
-        // Jika stok ada di localStorage, perbarui tampilan stok
-        const stockValue = stock[gameData.nama];
-        stockElement.setAttribute('data-stock', stockValue);
-        stockElement.textContent = `Stok: ${stockValue} tersedia`;
-      }
-    });
       
 
-function handleButtonClick(event) {
-  const index = Array.from(gameItems).indexOf(event.currentTarget.closest('.game-item'));
+    function handleButtonClick(event) {
+        const index = Array.from(gameItems).indexOf(event.currentTarget.closest('.game-item'));
+        const gameData = window.dataGame[index];
+        const button = event.currentTarget;
+        const stock = parseInt(button.getAttribute('data-stock'), 10);
+      
+        if (stock > 0) {
+          const updatedStock = stock - 1;
+          button.setAttribute('data-stock', updatedStock);
+      
+          const stockElement = document.getElementById(`stock-${gameData.nama}`);
+      
+          if (stockElement) {
+            stockElement.textContent = `Stock: ${updatedStock} available`;
+      
+            // Simpan perubahan stok ke localStorage
+            localStorage.setItem(`stock-${gameData.nama}`, updatedStock.toString());
+          }
+      
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const existingItem = cart.find(item => item.nama === gameData.nama);
+      
+          if (existingItem) {
+            existingItem.quantity++;
+            existingItem.harga += gameData.harga;
+          } else {
+            cart.push({
+              nama: gameData.nama,
+              image: gameData.image,
+              quantity: 1,
+              harga: gameData.harga,
+            });
+          }
+      
+          localStorage.setItem('cart', JSON.stringify(cart));
+      
+          // Perbarui stok di halaman Cart Page dengan mengambil data yang sama dari localStorage
+          const cartStockElement = document.getElementById(`cart-stock-${gameData.nama}`);
+          if (cartStockElement) {
+            cartStockElement.textContent = `Stock: ${updatedStock} available`;
+          }
+        } else {
+          alert('Stok habis.');
+          const stockElement = document.getElementById(`stock-${gameData.nama}`);
+      
+          if (stockElement) {
+            stockElement.textContent = `Stock: ${0} available`;
+      
+            // Simpan perubahan stok ke localStorage
+            localStorage.setItem(`stock-${gameData.nama}`, 0);
+          }
+        }
+      }
 
-  const gameData = window.dataGame[index];
-
-  const button = event.currentTarget;
-//   console.log('Button:', button);
-  const stock = parseInt(button.getAttribute('data-stock'), 10);
-//   console.log('Nilai stock dalam handleButtonClick:', button.getAttribute('data-stock'));
-
-if (stock > 0) {
-    // Mengurangi stok jika stok masih tersedia
-    const updatedStock = stock - 1;
-    button.setAttribute('data-stock', updatedStock);
-
-    const stockElement = document.getElementById(`stock-${gameData.nama}`);
-
-    // Memperbarui tampilan stok dalam elemen dengan ID yang sesuai
-    if (stockElement) {
-      stockElement.textContent = `Stok: ${updatedStock} tersedia`;
-
-      localStorage.setItem(`stock-${gameData.nama}`, updatedStock.toString());
-    }
-
-    // Mengupdate atau menambahkan item ke dalam keranjang
-    const cart = JSON.parse(localStorage.getItem('cart'));
-    const existingItem = cart.find(item => item.nama === gameData.nama);
-
-    if (existingItem) {
-      existingItem.quantity++;
-      existingItem.harga += gameData.harga;
-    } else {
-      cart.push({
-        nama: gameData.nama,
-        image: gameData.image,
-        quantity: 1,
-        harga: gameData.harga
-      });
-    }
-
-    // Menyimpan keranjang yang diperbarui ke localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-  } else {
-    alert('Stok habis.');
-  }
-}
 
 for (let i = 0; i < gameItems.length; i++) {
   const gameItem = gameItems[i];

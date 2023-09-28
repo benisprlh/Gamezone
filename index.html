@@ -34,17 +34,17 @@
             <h1>Login</h1>
             <form method="post">
                 <div class="txt_field">
-                    <input type="text" required>
+                    <input type="text" id="username" name="username" required>
                     <span></span>
                     <label>Username</label>
                 </div>
                 <div class="txt_field">
-                    <input type="password" required>
+                    <input type="password" id="password" name="password" required>
                     <span></span>
                     <label>Password</label>
                 </div>
                 <div class="pass">Forgot Password?</div>
-                <input type="submit" value="Login" onclick="login()" >
+                <input type="submit" value="Login">
                 <div class="signup_link">
                     Not a member? <a href="#">Signup</a>
                 </div>
@@ -78,24 +78,32 @@
     </div>
 
     <script>
-        function login() {
-            alert('Login berhasil!');
-            window.location.assign("quiz.html")
+        const form = document.querySelector("form")
 
-            // const username = document.querySelector('input[type="text"]').value;
-            // const password = document.querySelector('input[type="password"]').value;
-            
+        form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-            // if (username === '' || password === '') {
-            //     alert('Silakan isi kedua kolom username dan password.');
-            // } 
-            
-            
-            // if (username === 'a' || password === 'a' ) {
-            //     alert('Login berhasil!') && window.location.assign("quiz.html");
-            //     // window.location.assign("quiz.html")
-            // } 
-        };
+        const username = form.username.value;
+        const password = form.password.value;
+
+        const authenticated = authentication(username, password);
+
+        if (authenticated) {
+            setTimeout(() => {
+            window.location.href = "quiz.html";
+            }, 2000);
+        } else {
+            alert("password minimum 8 character");
+        }
+        });
+
+        function authentication(username, password) {
+        if (username && password.length > 8) {
+            return true;
+        } else {
+            return false;
+        }
+        }
     </script>
 </body>
 
