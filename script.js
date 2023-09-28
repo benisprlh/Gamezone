@@ -12,11 +12,21 @@ function generateGameItems(ageFixed) {
     let battleRoyal = localStorage.getItem("Battle-Royal");
     let sports = localStorage.getItem("Sports");
     let genreGroup = [action, battleRoyal, sports]
-    let priceUp300 = localStorage.getItem("up300")
-    let priceUnder300 = localStorage.getItem("under300")
-    let priceGroup = [priceUp300, priceUnder300]
+    localStorage.clear();
     let gameItemsHTML = "";
     dataGame.forEach((game, index) => {
+        if (!action && !sports && !battleRoyal){
+            gameItemsHTML += `
+            <article class="game-item">
+                <img src="${game.image}" alt="${game.nama}"gi>
+                <h2>${game.nama}</h2>
+                <p>Genre: ${game.genre}</p>
+                <p>Price: RP.${game.harga}</p>
+                <p>Stock: ${game.stok} available</p>
+                <button class="cart-button">Add to Cart</button>
+            </article>
+        `;
+        }
         if (idAge === "Di Bawah 18 Tahun"){
             if (game.umur < 18){
                 for (let i = 0; i < genreGroup.length; i++){
@@ -28,7 +38,7 @@ function generateGameItems(ageFixed) {
                             <p>Genre: ${game.genre}</p>
                             <p>Price: RP.${game.harga}</p>
                             <p>Stock: ${game.stok} available</p>
-                            <button>Add to Cart</button>
+                            <button class="cart-button">Add to Cart</button>
                         </article>
                     `;
                     }
@@ -45,7 +55,7 @@ function generateGameItems(ageFixed) {
                         <p>Genre: ${game.genre}</p>
                         <p>Price: RP.${game.harga}</p>
                         <p>Stock: ${game.stok} available</p>
-                        <button>Add to Cart</button>
+                        <button class="cart-button">Add to Cart</button>
                     </article>
                 `;
                 }

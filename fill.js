@@ -1,4 +1,5 @@
 window.addEventListener("load", function(){
+
     // document.getElementById("usiaunder18").addEventListener("click", function(){
         const dataAge = document.getElementById("usiaunder18");
         localStorage.setItem("keyAge", dataAge.value);
