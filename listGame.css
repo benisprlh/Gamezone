@@ -6,27 +6,73 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header {
+/* header {
     background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
+} */
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 15px;
+    width: 98%;
+    height: 60px;
+    background-color: #313131;
+    opacity: 0.9;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.5);
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+.brand {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    padding: 15px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.firstname {
+    color: aliceblue;
+    font-weight: 700;
+
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+.lastname {
+    color: rgb(0, 113, 206);
+    font-weight: 700;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation>li {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.navigation>li>a {
+    color: aliceblue;
+    font-size: 20px;
+    text-decoration: none; 
+}
+
+.navigation>li>a:hover{
+    color:rgb(0, 113, 206);
+    transition: all .3s ease-in-out;
+}
+
+.active {
+    background-color: rgb(0, 113, 206);
+    color: aliceblue;
+    padding: 15px;
+}
+
+.active:hover {
+    color: aliceblue !important;
 }
 
 .game-list {
@@ -61,19 +107,19 @@ nav a {
     margin-top: 10px;
 }
 
-footer {
+/* footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px;
-}
+} */
 
 .logo {
     width: 25px;
     height: 25px;
 }
 
-search-bar {
+.search-bar {
     margin-top: 20px;
     text-align: center;
 }
@@ -107,6 +153,90 @@ search-bar {
 
 #cancel-btn[style="display: none;"] {
     display: none;
+}
+
+footer {
+    background-color: #111;
+    margin: 40px 0 0 0;
+}
+
+.footerContainer {
+    width: 100%;
+    height: 15%;
+    padding: 10px;
+    
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: aliceblue;
+    margin: 20px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 1.5em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialIcons a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.footerNav {
+    margin: 10px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footerNav ul li a {
+    color: white;
+    margin: 40px;
+    text-decoration: none;
+    font-size: 1.2em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+
+.footerBottom {
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: rgb(220, 220, 220);
+}
+
+
+@media (max-width: 700px) {
+    .footerNav ul {
+        flex-direction: column;
+    }
+    .footerNav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
 }
 
 @media (max-width: 768px) {
