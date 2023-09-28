@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function()
     // import { dataGame } from './scripts/dataGame.js';
    
 
-function generateGameItems(ageFixed) {
+function generateGameItems() {
     
     let dataGame = window.dataGame;
                             
@@ -22,8 +22,8 @@ function generateGameItems(ageFixed) {
                 <h2>${game.nama}</h2>
                 <p>Genre: ${game.genre}</p>
                 <p>Price: RP.${game.harga}</p>
-                <p>Stock: ${game.stok} available</p>
-                <button class="cart-button">Add to Cart</button>
+                <p class="stock" id="stock-${game.nama}">Stock: ${game.stok} available</p>
+                <button class="cart-button" data-stock="${game.stok}">Add to Cart</button>
             </article>
         `;
         }
@@ -37,8 +37,8 @@ function generateGameItems(ageFixed) {
                             <h2>${game.nama}</h2>
                             <p>Genre: ${game.genre}</p>
                             <p>Price: RP.${game.harga}</p>
-                            <p>Stock: ${game.stok} available</p>
-                            <button class="cart-button">Add to Cart</button>
+                            <p class="stock" id="stock-${game.nama}">Stock: ${game.stok} available</p>
+                            <button class="cart-button" data-stock="${game.stok}">Add to Cart</button>
                         </article>
                     `;
                     }
@@ -54,8 +54,8 @@ function generateGameItems(ageFixed) {
                         <h2>${game.nama}</h2>
                         <p>Genre: ${game.genre}</p>
                         <p>Price: RP.${game.harga}</p>
-                        <p>Stock: ${game.stok} available</p>
-                        <button class="cart-button">Add to Cart</button>
+                        <p class="stock" id="stock-${game.nama}">Stock: ${game.stok} available</p>
+                        <button class="cart-button" data-stock="10">Add to Cart</button>
                     </article>
                 `;
                 }
@@ -68,9 +68,9 @@ function generateGameItems(ageFixed) {
     return gameItemsHTML;
 }
     
-function renderGameItems(ageFixed) {
+function renderGameItems() {
     const gameList = document.querySelector(".game-list");
-    const gameItemsHTML = generateGameItems(ageFixed);
+    const gameItemsHTML = generateGameItems();
    
     gameList.innerHTML = gameItemsHTML;
 }
@@ -96,6 +96,63 @@ renderGameItems();
         clearSearchInput();
         renderGameItems();
     });
+
+
+const gameItems = document.querySelectorAll('.game-item');
+
+
+function handleButtonClick(event) {
+  const index = Array.from(gameItems).indexOf(event.currentTarget.closest('.game-item'));
+
+  const gameData = window.dataGame[index];
+
+  const button = event.currentTarget;
+  console.log('Button:', button);
+  const stock = parseInt(button.getAttribute('data-stock'), 10);
+  console.log('Nilai stock dalam handleButtonClick:', button.getAttribute('data-stock'));
+
+  if (stock > 0) {
+    // Mengurangi stok jika stok masih tersedia
+    const updatedStock = stock - 1;
+    button.setAttribute('data-stock', updatedStock); // Memperbarui data stok pada tombol
+
+    // Memperbarui tampilan stok dalam elemen dengan ID yang sesuai
+    const stockElement = document.getElementById(`stock-${gameData.nama}`);
+    if (stockElement) {
+      stockElement.textContent = `Stock: ${updatedStock} available`;
+    }
+
+    // Lakukan apa pun yang perlu Anda lakukan ketika barang ditambahkan ke keranjang
+    // Anda dapat menyimpan data ini ke localStorage atau tempat lain sesuai kebutuhan Anda.
+  } else {
+    alert('Stok habis.');
+  }
+
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+//   const cart = JSON.parse(localStorage.getItem('cart'));
+//   for (let i = 0; i < cart.length; i++)
+//   cart.push(gameData);
+//   localStorage.setItem('cart', JSON.stringify(cart));
+
+//   let nama = gameData.nama;
+//   let image = gameData.image;
+//   let count = 1;
+//   let harga = gameData.harga;
+//   localStorage.setItem("nama", nama)
+//   localStorage.setItem("image", image)
+//   localStorage.setItem("count", count)
+//   localStorage.setItem("harga", harga)
+}
+
+for (let i = 0; i < gameItems.length; i++) {
+  const gameItem = gameItems[i];
+  const button = gameItem.querySelector('button');
+  button.addEventListener('click', handleButtonClick);
+  
+}
+
 });
     
 // Function to render game items based on search
@@ -122,3 +179,4 @@ searchInput.addEventListener("input", function() {
     const searchText = searchInput.value.trim();
     renderGames(searchText);
 });
+
