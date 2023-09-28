@@ -136,14 +136,14 @@ function handleButtonClick(event) {
 //   cart.push(gameData);
 //   localStorage.setItem('cart', JSON.stringify(cart));
 
-//   let nama = gameData.nama;
-//   let image = gameData.image;
-//   let count = 1;
-//   let harga = gameData.harga;
-//   localStorage.setItem("nama", nama)
-//   localStorage.setItem("image", image)
-//   localStorage.setItem("count", count)
-//   localStorage.setItem("harga", harga)
+  let nama = gameData.nama;
+  let image = gameData.image;
+  let count = 1;
+  let harga = gameData.harga;
+  localStorage.setItem("nama", nama)
+  localStorage.setItem("image", image)
+  localStorage.setItem("count", count)
+  localStorage.setItem("harga", harga)
 }
 
 for (let i = 0; i < gameItems.length; i++) {
