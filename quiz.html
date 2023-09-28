@@ -1,137 +1,241 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GameZone</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
-  <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary">
-        <div class="container">
-      <a class="navbar-brand text-white" href="#">GameZone</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class=" nav-item nav-link text-white active" href="index.html">Home</a>
-          <a class="nav-item nav-link text-white" href="listGame.html">Shop</a>
-          <a class="nav-item nav-link text-white" href="aboutUs.html">About Us</a>
-          <a class="nav-item nav-link text-white" href="cart.html">Cart</a>
-        </div>
-    </div>
-</div>
-</nav>
-<div class="background-image">
-    <div class="judul">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GameZone | Question</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="fContainer">
+    <nav class="wrapper">
+      <div class="brand">
+        <div class="firstname">Game</div>
+        <div class="lastname">Zone</div>
+      </div>
+      <!-- <h1>Project Description: E-Commerce Game Page</h1> -->
+      <!-- <ul class="navigation">
+        <li><a href="listGame.html">Shop</a></li>
+        <li><a href="aboutUs.html" class="active">About Us</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="index.html">Logout</a></li>
+    </ul> -->
+    </nav>
+    <div class="background-image">
+      <div class="judul">
         <div class="card">
-            <div class="card-body-judul">
-              <p>Silahkan Isi Pertanyaan Di Bawah Untuk Rekomendasi Game Favorit Anda. </p>
-            </div>
-          </div>
-    </div>
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-          <p>Berapakah Usia Kamu Saat Ini?</p>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Di Bawah 18 Tahun" id="usiaunder18">
-            <label class="form-check-label" for="flexRadioDefault1">
-            Di Bawah 18 Tahun
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" value="18 Ke Atas" id="usiaup18">
-            <label class="form-check-label" for="flexRadioDefault2">
-              18 Ke Atas
-            </label>
+          <div class="card-body-judul">
+            <p>Silahkan Isi Pertanyaan Di Bawah Untuk Rekomendasi Game Favorit Anda. </p>
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-         <p>Jenis Game Yang Kamu Sukai ?</p>
-         <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Action" id="Action">
-            <label class="form-check-label" for="flexCheckboxDefault1">
-            Action
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Battle-Royal" id="Battle-Royal">
-            <label class="form-check-label" for="flexCheckboxDefault2">
-              Battle-Royal
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Sports" id="Sports">
-            <label class="form-check-label" for="flexCheckboxDefault2">
-              Sports
-            </label>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <a class="btn btn-primary" href="listGame.html" type="button" id="nextPage">NEXT PAGE</a>
-</div>
-</div>
-
-    <footer class="bg-secondary text-white">
-        <div class="container">
-          <div class="row ">
-            <div class="col text-center">
-              <p><b>GameZone</b> &copy;2023. All Rights Reserved</p>
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <p>Berapakah Usia Kamu Saat Ini?</p>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="usiaunder18">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Di Bawah 18 Tahun
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="usiaup18" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                18 Ke Atas
+              </label>
             </div>
           </div>
         </div>
-  
+        <div class="card">
+          <div class="card-body">
+            <p>Jenis Game Yang Kamu Sukai ?</p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="action">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Action
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="Batle" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Battle-Royal
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="Sports" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Sports
+              </label>
+            </div>
+          </div>
         </div>
-  
-      </footer>
-    <style> .background-image {
-        background-image: url('wallpaperquiz.jpg');
-        background-attachment: fixed;
-        background-position: center;
-        text-align: center;
-        color: #fff;
-        font-size: 20px;
-        font-style: italic ;
-        padding: 200px;
-        padding-top: 50px ;
-    
-        .container {
-            padding: 20px;
-        
+        <div class="card">
+          <div class="card-body">
+            <p> Harga Pilihan Game Anda ?</p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="under300">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Di Bawah Rp.300.000
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="up300" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Di Atas Rp.300.000
+              </label>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="listGame.html" type="button">NEXT PAGE</a>
+      </div>
+    </div>
 
-        }
+    <footer>
+      <div class="container">
+        <div class="row ">
+          <div class="col text-center">
+            <p>Copyright &copy;2023; Designed by <b>GameZone</b></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-        .judul {
-            padding:  20px;
-            margin: 20px;
-            opacity: 0.9;
-        }
 
-        .card-body-judul {
-            font-style: italic;
-            font-size: 25px;
-            text-align: center;
-            color : black
-        }
+  <style>
+    *,
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
 
-        .card {padding-bottom: 15px;
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
     }
 
-    </style>
-    <script src="./fill.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
+    .fContainer {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #313131;
+      background: url("/assets/bg.jpg") no-repeat center center fixed;
+    }
+
+    .background-image {
+      background-image: url('wallpaperquiz.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      font-style: italic;
+      padding: 200px;
+      padding-top: 50px;
+
+      .container {
+        padding: 20px;
+        
+
+      }
+
+      .judul {
+        padding: 20px;
+        margin: 20px;
+        opacity: 0.9;
+      }
+
+      .card-body-judul {
+        font-style: italic;
+        font-size: 25px;
+        text-align: center;
+        color: black
+      }
+
+      .card {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        opacity: 0.9;
+      }
+    }
+
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      padding: 15px;
+      width: 100%;
+      height: 70px;
+      background-color: #313131;
+      opacity: 0.9;
+      box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: row;
+      font-size: 1.5em;
+      /* padding: 15px; */
+    }
+
+    .firstname {
+      color: aliceblue;
+      font-weight: 700;
+
+    }
+
+    .lastname {
+      color: rgb(0, 113, 206);
+      font-weight: 700;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navigation>li {
+      list-style-type: none;
+      padding: 15px;
+    }
+
+    .navigation>li>a {
+      color: aliceblue;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .navigation>li>a:hover {
+      color: rgb(0, 113, 206);
+      transition: all .3s ease-in-out;
+    }
+
+    .active {
+      background-color: rgb(0, 113, 206);
+      color: aliceblue;
+      padding: 15px;
+    }
+
+    .active:hover {
+      color: aliceblue !important;
+    }
+
+    footer{
+    width: 100%;
+    height: 15%;
+    padding: 10px;
+    background-color: #111;
+    color: rgb(220, 220, 220);
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
-
-
-
-

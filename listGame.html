@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./listGame.css">
-    <title>GameZone</title>
+    <title>GameZone | Shop</title>
 </head>
 <body>
+    <div class="fContainer">
     <header>
-        <h1>Welcome to GameZone</h1>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./listGame.html">Shop</a></li>
-                <li><a href="./aboutUs.html">About Us</a></li>
-                <li><a href="./cart.html">Cart</a></li>
-                <li><a href="./quiz.html">Quiz</a></li>
+        <!-- <h1>Welcome to GameZone</h1> -->
+        <nav class="wrapper">
+            <div class="brand">
+                <div class="firstname">Game</div>
+                <div class="lastname">Zone</div>
+            </div>
+            <!-- <h1>Project Description: E-Commerce Game Page</h1> -->
+            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="nyari apaan bray?">
+                <button id="search-btn">Search</button>
+                <button id="cancel-btn">Cancel</button>
+            </div>
+            <ul class="navigation">
+                <li><a href="listGame.html" class="active">Shop</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="index.html">Logout</a></li>
             </ul>
-        </nav>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="nyari apaan bray?">
-            <button id="search-btn">Search</button>
-            <button id="cancel-btn">Cancel</button>
-        </div>
+    </nav>
     </header>
     
     <section class="game-list" id="1">
@@ -66,12 +74,29 @@
     </section>
 
     <footer>
-        <p>&copy; 2023 GameZone</p>
-            <a href="#"><img src="./images/ig.png" alt="instagram logo" class="logo" ></a>
-            <a href="#"><img src="./images/twitter.png" alt="twitter logo" class="logo" ></a>
-            <a href="#"><img src="./images/facebook.png" alt="facebook logo" class="logo" ></a>
-            <a href="#"><img src="./images/ytb.png" alt="youtube logo" class="logo" ></a>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/?lang=id" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://m.youtube.com/?gl=ID&hl=id" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <!-- <li><a href="index.html">Home</a></li> -->
+                    <li><a href="listGame.html">Shop</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2023; Designed by <b>GameZone</b></p>
+            </div>
+        </div>
     </footer>
+</div>
     <script src="./script.js"></script>
 
     <script src="./scripts/dataGame.js"></script>
