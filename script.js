@@ -12,9 +12,13 @@ function generateGameItems() {
     let battleRoyal = localStorage.getItem("Battle-Royal");
     let sports = localStorage.getItem("Sports");
     let genreGroup = [action, battleRoyal, sports]
-    localStorage.clear();
+    localStorage.removeItem("keyAge")
+    localStorage.removeItem("Action")
+    localStorage.removeItem("Battle-Royal")
+    localStorage.removeItem("Sports")
     let gameItemsHTML = "";
     dataGame.forEach((game, index) => {
+        localStorage.setItem(`stock-${game.nama}`, game.stok);
         if (!action && !sports && !battleRoyal){
             gameItemsHTML += `
             <article class="game-item">
@@ -101,49 +105,75 @@ renderGameItems();
 const gameItems = document.querySelectorAll('.game-item');
 
 
+    if (!localStorage.getItem('cart')) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+
+    // Inisialisasi stok saat halaman dimuat
+    // Mengambil stok dari localStorage (jika sudah ada)
+    const stock = JSON.parse(localStorage.getItem('stock')) || {};
+  
+    // Memperbarui tampilan stok di halaman list game
+
+    gameItems.forEach(gameItem => {
+      const gameDataIndex = Array.from(gameItems).indexOf(gameItem);
+      const gameData = window.dataGame[gameDataIndex];
+      const stockElement = gameItem.querySelector('[data-stock]');
+  
+      if (stock[gameData.nama] !== undefined) {
+        // Jika stok ada di localStorage, perbarui tampilan stok
+        const stockValue = stock[gameData.nama];
+        stockElement.setAttribute('data-stock', stockValue);
+        stockElement.textContent = `Stok: ${stockValue} tersedia`;
+      }
+    });
+      
+
 function handleButtonClick(event) {
   const index = Array.from(gameItems).indexOf(event.currentTarget.closest('.game-item'));
 
   const gameData = window.dataGame[index];
 
   const button = event.currentTarget;
-  console.log('Button:', button);
+//   console.log('Button:', button);
   const stock = parseInt(button.getAttribute('data-stock'), 10);
-  console.log('Nilai stock dalam handleButtonClick:', button.getAttribute('data-stock'));
+//   console.log('Nilai stock dalam handleButtonClick:', button.getAttribute('data-stock'));
 
-  if (stock > 0) {
+if (stock > 0) {
     // Mengurangi stok jika stok masih tersedia
     const updatedStock = stock - 1;
-    button.setAttribute('data-stock', updatedStock); // Memperbarui data stok pada tombol
+    button.setAttribute('data-stock', updatedStock);
+
+    const stockElement = document.getElementById(`stock-${gameData.nama}`);
 
     // Memperbarui tampilan stok dalam elemen dengan ID yang sesuai
-    const stockElement = document.getElementById(`stock-${gameData.nama}`);
     if (stockElement) {
-      stockElement.textContent = `Stock: ${updatedStock} available`;
+      stockElement.textContent = `Stok: ${updatedStock} tersedia`;
+
+      localStorage.setItem(`stock-${gameData.nama}`, updatedStock.toString());
     }
 
-    // Lakukan apa pun yang perlu Anda lakukan ketika barang ditambahkan ke keranjang
-    // Anda dapat menyimpan data ini ke localStorage atau tempat lain sesuai kebutuhan Anda.
+    // Mengupdate atau menambahkan item ke dalam keranjang
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const existingItem = cart.find(item => item.nama === gameData.nama);
+
+    if (existingItem) {
+      existingItem.quantity++;
+      existingItem.harga += gameData.harga;
+    } else {
+      cart.push({
+        nama: gameData.nama,
+        image: gameData.image,
+        quantity: 1,
+        harga: gameData.harga
+      });
+    }
+
+    // Menyimpan keranjang yang diperbarui ke localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
   } else {
     alert('Stok habis.');
   }
-
-  if (!localStorage.getItem('cart')) {
-    localStorage.setItem('cart', JSON.stringify([]));
-  }
-//   const cart = JSON.parse(localStorage.getItem('cart'));
-//   for (let i = 0; i < cart.length; i++)
-//   cart.push(gameData);
-//   localStorage.setItem('cart', JSON.stringify(cart));
-
-  let nama = gameData.nama;
-  let image = gameData.image;
-  let count = 1;
-  let harga = gameData.harga;
-  localStorage.setItem("nama", nama)
-  localStorage.setItem("image", image)
-  localStorage.setItem("count", count)
-  localStorage.setItem("harga", harga)
 }
 
 for (let i = 0; i < gameItems.length; i++) {

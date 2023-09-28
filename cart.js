@@ -1,36 +1,26 @@
-document.addEventListener("DOMContentLoaded", function()
-{
-
 function generateProductList() {
-    const nama = localStorage.getItem("nama");
-    const image = localStorage.getItem("image");
-    const count = localStorage.getItem("count");
-    const harga = localStorage.getItem("harga");
-    let productListHTML = "";
-
-    productListHTML += `<tr>
-              
-    <td><img src="${image}"></td>
-   <td>${nama}</td>
-   <td>${count}</td>
-   <td>${harga}</td>
-   <td>
-       <button class="button-29" id="penambahan">+</button>
-       <button class="button-29" id="pengurangan">-</button>
-       <button class="button-29" id="delete">delete</button> 
-   </td> 
-</tr>`
-
-return productListHTML;
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    let productListHTML = '';
+    for (let i = 0; i < cart.length; i++) {
+        productListHTML += `<tr>
+            <td><img src="${cart[i].image}"></td>
+            <td>${cart[i].nama}</td>
+            <td>${cart[i].quantity}</td>
+            <td>${cart[i].harga}</td>
+            <td>
+                <button class="button-29 penambahan">+</button>
+                <button class="button-29 pengurangan">-</button>
+                <button class="button-29 delete">delete</button>
+            </td> 
+        </tr>`;
+    }
+    return productListHTML;
 }
 
-
-
-function renderGame(){
-    const productList = document.querySelector(".product-list")
-    const produclistHTML = generateProductList();
-
-    productList.innerHTML = produclistHTML;
+function renderGame() {
+    const productList = document.querySelector(".product-list");
+    const productListHTML = generateProductList();
+    productList.innerHTML = productListHTML;
 }
+
 renderGame();
-});
