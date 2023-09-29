@@ -177,8 +177,46 @@ function handleDeleteClick(event) {
     return;
 }
 
+function displayCheckoutModal() {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {
+        backdrop: 'static',
+        keyboard: false
+    });
+
+    // Get the elements in the modal
+    const namaGameElement = document.querySelector('.namaGame');
+    const totalGameElement = document.querySelector('.totalGame');
+    const totalElement = document.querySelector('.total');
+
+    // Initialize variables to store game list, total quantity, and total payment
+    let gameList = '';
+    let totalQuantity = 0;
+    let totalPrice = 0;
+
+    // Loop through the cart to build the game list and calculate totals
+    cart.forEach((item) => {
+        gameList += `${item.nama}<br>`;
+        totalQuantity += item.quantity;
+        totalPrice += item.harga * item.quantity;
+    });
+
+    // Update the modal content with the calculated values
+    namaGameElement.innerHTML = gameList;
+    totalGameElement.innerHTML = totalQuantity;
+    totalElement.innerHTML = `RP.${totalPrice.toFixed(2)}`;
+
+    // Show the modal
+    modal.show();
+}
+
+
 const deleteButtons = document.querySelectorAll('.delete');
 for (let i = 0; i < deleteButtons.length; i++){
     let button = deleteButtons[i];
     button.addEventListener("click", handleDeleteClick) 
 }
+
+// Add an event listener to the "Submit" button to display the modal
+const submitButton = document.getElementById('submit-modal');
+submitButton.addEventListener('click', displayCheckoutModal);
