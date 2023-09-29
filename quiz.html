@@ -32,60 +32,42 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="card">
-          <div class="card-body">
-            <p>Berapakah Usia Kamu Saat Ini?</p>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="usiaunder18">
-              <label class="form-check-label" for="flexRadioDefault1">
-                Di Bawah 18 Tahun
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="usiaup18" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                18 Ke Atas
-              </label>
-            </div>
+      <div class="card">
+        <div class="card-body">
+          <p>Berapakah Usia Kamu Saat Ini?</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Di Bawah 18 Tahun" id="usiaunder18">
+            <label class="form-check-label" for="flexRadioDefault1">
+            Di Bawah 18 Tahun
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" value="18 Ke Atas" id="usiaup18">
+            <label class="form-check-label" for="flexRadioDefault2">
+              18 Ke Atas
+            </label>
           </div>
         </div>
+      </div>
         <div class="card">
           <div class="card-body">
-            <p>Jenis Game Yang Kamu Sukai ?</p>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="action">
-              <label class="form-check-label" for="flexRadioDefault1">
-                Action
+           <p>Jenis Game Yang Kamu Sukai ?</p>
+           <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Action" id="Action">
+              <label class="form-check-label" for="flexCheckboxDefault1">
+              Action
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="Batle" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
+              <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Battle-Royal" id="Battle-Royal">
+              <label class="form-check-label" for="flexCheckboxDefault2">
                 Battle-Royal
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="Sports" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
+              <input class="form-check-input" type="checkbox" name="flexCheckboxDefault" value="Sports" id="Sports">
+              <label class="form-check-label" for="flexCheckboxDefault2">
                 Sports
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <p> Harga Pilihan Game Anda ?</p>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="under300">
-              <label class="form-check-label" for="flexRadioDefault1">
-                Di Bawah Rp.300.000
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="up300" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                Di Atas Rp.300.000
               </label>
             </div>
           </div>
@@ -232,7 +214,7 @@
     color: rgb(220, 220, 220);
     }
   </style>
-
+  <script src="./scripts/fill.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>

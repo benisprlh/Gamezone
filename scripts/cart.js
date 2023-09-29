@@ -220,3 +220,21 @@ for (let i = 0; i < deleteButtons.length; i++){
 // Add an event listener to the "Submit" button to display the modal
 const submitButton = document.getElementById('submit-modal');
 submitButton.addEventListener('click', displayCheckoutModal);
+
+
+document.getElementById("confirm").addEventListener("click", function(){
+    const productList = document.querySelector(".product-list");
+    const parent = productList.parentElement;
+    parent.removeChild(productList);
+    localStorage.removeItem("cart")
+    alert ("Anda berhasil membeli game silahkan cek notifikasi email anda")
+    setTimeout(() => {
+    window.location.href = "listGame.html";
+    }, 2000);
+})
+
+document.getElementById("cancel").addEventListener("click", function(){
+    setTimeout(() => {
+    window.location.href = "cart.html";
+    }, 2000);
+})
